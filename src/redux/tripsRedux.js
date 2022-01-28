@@ -17,7 +17,7 @@ export const getFilteredTrips = ({trips, filters}) => {
 
   if(filters.tags.length){
     output = output.filter(trip => filters.tags.every(tag => trip.tags.includes(tag)));
-
+  }
   // TODO - sort by cost descending (most expensive goes first)
 
   return output;
@@ -25,8 +25,6 @@ export const getFilteredTrips = ({trips, filters}) => {
 
 export const getTripById = ({trips}, tripId) => {
   const filtered = trips.filter(trip => trip.id === tripId);
-
-  // TODO - filter trips by tripId
 
   console.log('filtering trips by tripId:', tripId, filtered);
   return filtered.length ? filtered[0] : {error: true};
