@@ -12,7 +12,7 @@ export const getFilteredTrips = ({trips, filters}) => {
   }
 
   // if(filters.duration){
-    output = output.filter(trip => (trip.days <= filters.duration.to && trip.days >= filters.duration.from));
+  output = output.filter(trip => (trip.days <= filters.duration.to && trip.days >= filters.duration.from));
   // }
 
   if(filters.tags.length){
