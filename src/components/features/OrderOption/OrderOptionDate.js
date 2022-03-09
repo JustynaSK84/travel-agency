@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
-const OrderOptionDate = ({setOptionDate, currentValue}) => {
+const OrderOptionDate = ({setOptionValue, currentValue}) => {
   return (
     <DatePicker className={styles.input} selected={currentValue}
-      onChange={(date) => setOptionDate(date)} 
+      onChange={(date) => setOptionValue(date)} 
       minDate={new Date()}
     />
   );
@@ -19,7 +19,6 @@ OrderOptionDate.propTypes = {
   onChange: PropTypes.object,
   setOptionValue: PropTypes.func,
   currentValue: PropTypes.any,
-  setOptionDate: PropTypes.func, 
 };
 
 export default OrderOptionDate;

@@ -9,7 +9,7 @@ const OrderOptionNumber = ({ currentValue, setOptionValue, price, limits }) => {
       <input 
         type="number"
         value={currentValue}
-        onChange={event => setOptionValue(perseInt(event.currentTarget.value))} 
+        onChange={event => setOptionValue(parseInt(event.currentTarget.value))} 
         max={limits.max}
         min={limits.min}
      

@@ -38,7 +38,7 @@ OrderOption.propTypes = {
   name: PropTypes.string,
   type: PropTypes.string,
   id: PropTypes.string,
-  setOrderOption: PropTypes.string,
+  setOrderOption: PropTypes.func,
 };
 
 export default OrderOption;
