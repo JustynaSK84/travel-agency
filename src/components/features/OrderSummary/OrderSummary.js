@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './OrderSummary.module.scss';
-import {calculateTotal} from '../../../utils/calculateTotal';
-import {formatPrice} from  '../../../utils/formatPrice';
+import { calculateTotal } from '../../../utils/calculateTotal';
+import { formatPrice } from '../../../utils/formatPrice';
 import PropTypes from 'prop-types';
 
 const OrderSummary = (props) => {
@@ -23,8 +23,7 @@ const OrderSummary = (props) => {
 
 OrderSummary.propTypes = {
   options: PropTypes.object,
-  tripOptions: PropTypes.object,
   cost: PropTypes.string,
 };
 
-export default OrderSummary; 
+export default OrderSummary;

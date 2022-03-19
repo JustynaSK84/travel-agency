@@ -1,7 +1,7 @@
 import React from 'react';
 import OrderSummary from '../OrderSummary/OrderSummary';
 import OrderOption from '../OrderOption/OrderOption';
-import {Grid, Row, Col} from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 import pricing from '../../../data/pricing.json';
 import PropTypes from 'prop-types';
 import { formatPrice } from '../../../utils/formatPrice';
@@ -9,7 +9,7 @@ import { calculateTotal } from '../../../utils/calculateTotal';
 import settings from '../../../data/settings';
 import Button from '../../common/Button/Button';
 
-const sendOrder = ({tripCost, countryName, options, tripId, tripName}) => {
+const sendOrder = (tripCost, countryName, options, tripId, tripName) => {
   const totalCost = formatPrice(calculateTotal(tripCost, options));
   const payload = {
     ...options,
@@ -48,15 +48,15 @@ const validateOrderData = (options, cost, countryName, tripId, tripName) => {
   }
 };
 
-const OrderForm = (tripCost, options, setOrderOption) => {
+const OrderForm = ({ tripCost, options, setOrderOption }) => {
   return (
     <Grid>
       <Row>
         {pricing.map((option) => (
           <Col md={4} key={option.id}>
-            <OrderOption {...option} currentValue={option['car-rental']} setOrderOption={setOrderOption}/>
+            <OrderOption {...option} currentValue={options[option.id]} setOrderOption={setOrderOption} />
           </Col>
-        ))}  
+        ))}
         <Col xs={12}>
           <OrderSummary options={options} cost={tripCost} />
         </Col>
@@ -65,6 +65,7 @@ const OrderForm = (tripCost, options, setOrderOption) => {
     </Grid>
   );
 };
+
 OrderForm.propTypes = {
   cost: PropTypes.string,
   countryName: PropTypes.string,
@@ -75,4 +76,4 @@ OrderForm.propTypes = {
   tripCost: PropTypes.string,
 };
 
-export default OrderForm; 
+export default OrderForm;

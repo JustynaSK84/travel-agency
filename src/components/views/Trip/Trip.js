@@ -13,10 +13,11 @@ import ListItem from '../../common/ListItem/ListItem';
 import OrderForm from '../../features/OrderForm/OrderFormContainer';
 
 import styles from './Trip.module.scss';
-import {Grid, Row, Col} from 'react-flexbox-grid';
+import { Grid, Row, Col } from 'react-flexbox-grid';
 
-const Trip = ({error, name, id, image, cost, days, description, country, intro}) => {
-  if(error) return <NotFound />;
+
+const Trip = ({ error, name, id, image, cost, days, description, country, intro }) => {
+  if (error) return <NotFound />;
   else return (
     <Section>
       <Grid>
