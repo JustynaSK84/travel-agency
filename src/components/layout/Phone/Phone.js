@@ -18,9 +18,9 @@ class Phone extends React.Component {
     if (currentTime.getUTCHours() >= 16 && currentTime.getUTCHours () < 22 ) {
       return 'Helena, 167.280.3970';
     }
-    
+    // if (currentTime.getUTCHours() >= 22 && currentTime.getUTCHours () < 8 ) {
     return 'The office opens at 8:00 UTC';
-    
+    // }
   }
 
   render() {
